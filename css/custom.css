@@ -7,6 +7,9 @@
 body {
   font-family: 'Montserrat', sans-serif;
 }
+a{
+  text-decoration: none!important;
+}
 
 #header,
 #store-features,
@@ -16,11 +19,27 @@ body {
 #header > div{
   padding: 0 104px;
 }
-#header {
-  height: 150px;
-  margin: 0 auto;
-  padding-top: 5rem;
-  padding-bottom: 5rem; 
+@media(min-width: 992px){
+  #header {
+    height: 150px;
+    margin: 0 auto;
+    padding-top: 5rem;
+    padding-bottom: 5rem; 
+  }
+}
+@media(max-width: 992px){
+  #header {
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem; 
+  }
+  #header .shopping-bag-items{
+    margin-top: 10px;
+    float: right;
+  }
+  #footer .main-footer{
+    text-align: center;
+  }
 }
 #header ul li {
   display: inline;
@@ -46,6 +65,9 @@ body {
 }
 .menu-nav-wrapp .menu{
   margin-bottom: 0;
+}
+.menu li a i{
+  padding-left: 6px;
 }
 .logo-wrapp{
   padding-left: 0;
@@ -94,10 +116,14 @@ body {
   transition: 1s ease-in-out;
 }
 
-.breadcrumbs ul li{
+.breadcrumbs ul li,
+.breadcrumbs ul li a{
   font-weight: bold;
 }
-.breadcrumbs ul li:last-child{
+.breadcrumbs ul li a{
+  color: #000;
+}
+.breadcrumbs ul li a:last-child{
   color: rgb(136, 136, 136);
 }
 .breadcrumbs ul li > span {
@@ -239,6 +265,12 @@ body {
     margin-right: 0!important;
   }
 }
+@media(max-width: 992px){
+  #content .content-page .product-item:nth-child(odd){
+    margin-bottom: 50px;
+    margin-right: 30px;
+  }
+}
 .product-image{
   height: 220px;
 }
@@ -325,6 +357,9 @@ body {
   padding: 45px 0;
   text-align: right;
 }
+.clear-wish-list{
+  margin-right: 20px;
+}
 .clear{
   border: 2px solid #000;
   height: 38px;
@@ -345,18 +380,33 @@ body {
   border-top: 1px solid rgb(221, 221, 221);
 }
 .owl-stage-outer{
-  border: 2px solid #000;
+  position: relative;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
   padding: 26px 50px;
+}
+.owl-carousel .owl-stage-outer:before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 0px;
+  left: 0;
+  margin: 0 auto;
+  width: 20px;
+  border: 1px solid; 
 }
 .owl-carousel .owl-stage-outer:after{
   content: "";
-  display: none;
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 0px;
+  right: 0;
   margin: 0 auto;
-  width: 90px;
-  border: 1px solid;
-  padding-top: 0;
-  margin-left: 0;
-  transition: all 1s;  
+  width: 20px;
+  border: 1px solid; 
 }
 .owl-carousel .item {
   margin: 3px;
@@ -388,6 +438,40 @@ body {
 }
 .feature-icon{
   width: 42px;
+}
+.feature-info{
+
+}
+#content .pagging ul{
+  text-align: center;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+#content .pagging .page{
+  text-align: center;
+}
+#content .pagging .page.active{
+  line-height: 30px;
+  width: 30px;
+  border: 1px solid #000;
+  color: rgb(226, 67, 67);
+  position: relative;
+}
+#content .pagging .page{
+  line-height: 30px;
+  width: 30px;
+  border: 1px solid #dddddd;
+  color: #dddddd;
+  position: relative;
+}
+#content .pagging .page a{
+  color: #dddddd;
+}
+#content .pagging .page{
+  cursor: pointer;
+}
+#content .pagging .page:not(:last-child){
+  margin-right: 4px;
 }
 .store-feature-title{
   font-size: 12px;
@@ -429,4 +513,21 @@ body {
 }
 .input-error{
   border: 1px solid red;
+}
+@media(max-width: 570px){
+  .pre-footer ul{
+    width: 130px;
+  }
+  .payment-icons-block .list-inline > li{
+    margin-bottom: 10px;
+  }
+  .main-footer div:first-child{
+    margin: 0 -15px;
+  }
+  .owl-carousel .owl-stage-outer{
+    padding: 26px 30px;
+  }
+  .no-js .owl-carousel, .owl-carousel.owl-loaded{
+    padding: 70px 82px;
+  }
 }

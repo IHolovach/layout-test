@@ -3,14 +3,15 @@ $(document).ready(function(){
     $owlCarousel.owlCarousel({
       loop: false,
       dots: true,
-      margin: 40,
+      margin: 20,
       responsive: {
         0: {
           items: 1,
           slideBy: 2
         },
         600: {
-          items: 3,
+          margin: 10,
+          items: 2,
           slideBy: 4
         },
         1000: {

@@ -29,15 +29,22 @@ $(document).ready(function(){
 		$('.shopping-sum').append(newSum);
 	});
 
-	$('#email').blur(function() {
+	$('#email').on('change', function(e){
 	    var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 	    if (testEmail.test(this.value)){
 	    	$(this).removeClass('input-error');
-	    	console.log($(this));
+	    } else if(!$('#email').val()){
+	    	$(this).removeClass('input-error');
 	    } else{
 	    	$(this).addClass('input-error');
-	    	console.log($(this));
 	    }
+	});
+
+	$('#email').on('submit, keypress', function(e){
+		if(e.keyCode === 13)
+			e.preventDefault();
+		if(e.type == "submit")
+			e.preventDefault();
 	});
 	
 });
